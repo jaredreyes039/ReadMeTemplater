@@ -1,16 +1,3 @@
-
-# egergre
-Created By: ergergerg
----
-
-## Description
-- shrerthe[A
-
-## Disclaimer
-- wfergererg
-
-    
-
 # ReadMeTemplater
 Created By: Jay Reyes
 ---
