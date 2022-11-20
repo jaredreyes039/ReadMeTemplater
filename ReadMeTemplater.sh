@@ -6,13 +6,20 @@ echo "Please, enter a brief, but detailed description of your code to share with
 read desc
 echo ""
 echo "Perfect! Now, let's make it clear what the code consists of."
-echo "How many frontend, backend, API, and other tools does your site consist of? (Total stack count)"
-read stack_count
+echo "Are you ready to enter your stack? (Y/n)"
+read permission
+idx=0
 STACK=()
-for ((i = 0 ; i < $stack_count ; i++)); do
-    echo "Enter tool $i"
+while [ $permission == "Y" ]; do
+    echo "Enter stack tool: "
     read tool
-    STACK[$i]="$tool"
+
+    STACK[$idx]="$tool"
+    ((idx+=1))
+
+    echo "Add another tool?"
+    read permission
+
 done
 echo "Awesome. Next, are there any warnings or disclaimers we need to know? (y/n)"
 read warning_status
@@ -34,9 +41,6 @@ Created By: $authors
 
 ## Description
 - $desc
-
-## Usage
-{Insert **USAGE INSTRUCTIONS** here}
 
 ## Disclaimer
 - $disclaimer
@@ -65,10 +69,12 @@ Created By: $authors
 {Insert **USAGE INSTRUCTIONS** here}
 
     " >> README.md
+
     echo "## Stack" >> README.md
     for ((i=0; i< $stack_count; i++)); do
         echo "- ${STACK[$i]}" >> README.md
         done
+    
 else
     echo "Error: Not a valid option. No will be used as default."
     echo "Aight, just a bit longer..."
