@@ -1,7 +1,7 @@
 # ReadMeTemplater
 
 Created By: Jay Reyes
-Last Updated: 11/19/2022 @ 10:30pm PST
+
 
 ## Description (From Templater)
 
